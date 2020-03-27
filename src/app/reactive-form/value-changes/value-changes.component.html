@@ -1,0 +1,13 @@
+<h2>valueChanges</h2>
+<label>
+  ValueChanges:
+  <input type="text" [formControl]="valueChanges">
+</label>
+<h3>formControl.value</h3>
+<div>{{valueChanges.value}}</div>
+<h3>log</h3>
+<div>
+  <div *ngFor="let log of history">{{log}}</div>
+</div>
+<h3>change value</h3>
+<button (click)="updateName()">update</button>

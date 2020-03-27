@@ -1,0 +1,44 @@
+<h2>FormGroup</h2>
+<form [formGroup]="userForm">
+  <label>
+    firstName:
+    <input formControlName="firstName" type="text" minlength="4">
+    <button type="submit" [disabled]="userForm.controls.firstName.invalid">firstName if form is invalid</button>
+  </label>
+  <br>
+  <label>
+    lastName:
+    <input formControlName="lastName" type="text" minlength="4">
+    <button type="submit" [disabled]="userForm.controls.lastName.invalid">lastName if form is invalid</button>
+  </label>
+  <br>
+  <h3>Address</h3>
+  <div formGroupName="address">
+    <label>
+      Street:
+      <input type="text" formControlName="street">
+    </label>
+  </div>
+  <h3>Picture</h3>
+  <div formGroupName="pictures">
+    <label>
+      PictureName:
+      <input type="text" formControlName="name">
+    </label>
+  </div>
+  <h3>Friends Array</h3>
+  <div formArrayName="friends">
+    <label *ngFor="let friend of userForm.controls.friends.value; let i=index">
+      <input type="text" formControlName="{{i}}"><br>
+    </label>
+    <input type="text" [formControl]="newFriend">
+    <button (click)="addFriend(newFriend.value)"> add friend</button>
+  </div>
+  <button type="submit" [disabled]="userForm.invalid">disabled if form is invalid</button>
+  <button type="button" (click)="setValue()">setValue</button>
+  <button type="button" (click)="patchValue()">patchValue</button>
+</form>
+<h3>current value of formGroup</h3>
+<div>{{getValue()}}</div>
+<h3>Log Of FormGroupChanges</h3>
+<div *ngFor="let log of history">{{log}}</div>

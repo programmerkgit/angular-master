@@ -1,0 +1,11 @@
+<h2>formControl.setValue</h2>
+<label>
+  Value:
+  <input type="text" [formControl]="value" placeholder="value"><br>
+</label>
+<label>
+  Target:
+  <input type="text" [formControl]="target" placeholder="target">
+</label>
+
+<button (click)="setValue(value.value)">update</button>

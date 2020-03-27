@@ -1,0 +1,32 @@
+<h2>User Form</h2>
+<form [formGroup]="userForm">
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label>
+  <br>
+  <h3>pictures</h3>
+  <div formArrayName="pictures">
+    <label *ngFor="let pic of pictures.controls; let i=index">
+      Pic-{{i}}
+      <input type="text" formControlName="{{i}}">
+      <br>
+    </label>
+  </div>
+  <h3>address</h3>
+  <div formGroupName="address">
+    <label>
+      street:
+      <input type="text" formControlName="street" placeholder="street">
+    </label>
+    <br>
+    <label>
+      tel:
+      <input type="tel" formControlName="tel" placeholder="tel">
+    </label>
+  </div>
+</form>
+<h3>path</h3>
+<input [(ngModel)]="path" name="path">
+<input [(ngModel)]="value" name="value">
+<button (click)="setPath(path, value)">setPath</button>
