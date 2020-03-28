@@ -9,11 +9,13 @@ import { SetValueComponent } from './set-value/set-value.component';
 import { GroupFormComponent } from './group-form/group-form.component';
 import { UseFormBuilderComponent } from './use-form-builder/use-form-builder.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { ErrorsComponent } from './errors/errors.component';
+import { ValidatorsComponent } from './validators/validators.component';
 
 
 @NgModule({
   declarations: [ AngularFormComponent, ValueChangesComponent, SetValueComponent, GroupFormComponent,
-    UseFormBuilderComponent, TemplateDrivenFormComponent ],
+    UseFormBuilderComponent, TemplateDrivenFormComponent, ErrorsComponent, ValidatorsComponent ],
   imports: [
     CommonModule,
     AngularFormRoutingModule,

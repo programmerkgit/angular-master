@@ -1,0 +1,23 @@
+<form [formGroup]="formGroup">
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label>
+  <br>
+  <label>
+    Email:
+    <input type="email" formControlName="email">
+  </label>
+  <br>
+  <label>
+    Password:
+    <input type="password" formControlName="password">
+  </label>
+  <div *ngIf="formGroup.get('password')?.errors?.required">
+    必須です
+  </div>
+  <div *ngIf="formGroup.get('password')?.errors?.minlength">
+    8文字以上です
+  </div>
+  <br>
+</form>

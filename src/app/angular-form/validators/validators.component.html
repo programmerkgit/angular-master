@@ -1,0 +1,36 @@
+<form [formGroup]="userForm">
+  <label>
+    Name:<input type="text" formControlName="name">
+  </label>
+  <br>
+  <div *ngIf="userForm.get('name').errors">
+    エラー
+  </div>
+  <label>
+    Email:
+    <input type="email" formControlName="email">
+  </label>
+  <div *ngIf="userForm.get('email').errors">
+    エラー
+  </div>
+  <br>
+  <label>
+    Password:
+    <input type="password" formControlName="password">
+  </label>
+  <div *ngIf="userForm.get('password').errors">
+    エラー
+  </div>
+  <br>
+  <label>
+    Age:
+    <input type="number" formControlName="age">
+  </label>
+  <div *ngIf="userForm.get('age').errors">エラー</div>
+  <br>
+  <label>
+    Agreement:
+    <input type="checkbox" formControlName="agree">
+  </label>
+  <div *ngIf="userForm.get('agree').errors">エラー</div>
+</form>
