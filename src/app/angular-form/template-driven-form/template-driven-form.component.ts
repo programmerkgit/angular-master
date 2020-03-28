@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-template-driven-form',
@@ -11,6 +12,13 @@ export class TemplateDrivenFormComponent implements OnInit {
   age: number = 30;
 
   constructor() {
+  }
+
+  onSubmit() {
+  }
+
+  passForm(a: NgForm, b: FormGroup) {
+    console.log(a, b);
   }
 
   ngOnInit() {

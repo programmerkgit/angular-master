@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ReactiveFormRoutingModule } from './reactive-form-routing.module';
-import { ReactiveFormComponent } from './reactive-form.component';
+import { AngularFormRoutingModule } from './angular-form-routing.module';
+import { AngularFormComponent } from './angular-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ValueChangesComponent } from './value-changes/value-changes.component';
 import { SetValueComponent } from './set-value/set-value.component';
@@ -12,14 +12,14 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
 
 
 @NgModule({
-  declarations: [ ReactiveFormComponent, ValueChangesComponent, SetValueComponent, GroupFormComponent,
+  declarations: [ AngularFormComponent, ValueChangesComponent, SetValueComponent, GroupFormComponent,
     UseFormBuilderComponent, TemplateDrivenFormComponent ],
   imports: [
     CommonModule,
-    ReactiveFormRoutingModule,
+    AngularFormRoutingModule,
     ReactiveFormsModule,
     FormsModule
   ]
 })
-export class ReactiveFormModule {
+export class AngularFormModule {
 }

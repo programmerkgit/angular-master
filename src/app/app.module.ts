@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ReactiveFormModule } from './reactive-form/reactive-form.module';
+import { AngularFormModule } from './angular-form/angular-form.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,7 @@ import { ReactiveFormModule } from './reactive-form/reactive-form.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormModule,
+    AngularFormModule,
   ],
   providers: [],
   bootstrap: [ AppComponent ]

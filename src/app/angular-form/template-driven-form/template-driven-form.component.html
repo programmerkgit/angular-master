@@ -1,0 +1,30 @@
+<br>
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+  <!--exported as ngForm Directive-->
+  <h3>Form</h3>
+  <label>
+    Name:
+    <input
+      required type="text" #nameInput #nameModel="ngModel"
+      class="form-control" [(ngModel)]="name" name="name">
+    <h4>class name is added automatically</h4>
+    <ul>
+      <li>untouched=>touched: visited</li>
+      <li>pristine=>dirty: change value</li>
+      <li>valid-invalid: validity</li>
+    </ul>
+    <div style="padding: 2rem">className: {{nameInput.className}}</div>
+  </label>
+  <label>
+    Age:
+    <input required type="number" [(ngModel)]="age" name="age">
+  </label>
+  <div [hidden]="nameModel.invalid || nameModel.pristine"
+       class="alert alert-danger">
+    Name is required
+  </div>
+  <h3>myForm is formGroup</h3>
+  <div *ngIf="myForm.form.controls.name">name: {{myForm.form.controls.name.value}}</div>
+  <div *ngIf="myForm.form.controls.age">Age: {{myForm.form.controls.age.value}}</div>
+  <button (click)="passForm(myForm, myForm.form)">passForm</button>
+</form>
