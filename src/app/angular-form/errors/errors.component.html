@@ -13,10 +13,10 @@
     Password:
     <input type="password" formControlName="password">
   </label>
-  <div *ngIf="formGroup.get('password')?.errors?.required">
+  <div class="appear" *ngIf="formGroup.get('password')?.errors?.required">
     必須です
   </div>
-  <div *ngIf="formGroup.get('password')?.errors?.minlength">
+  <div class="appear" *ngIf="formGroup.get('password')?.errors?.minlength">
     8文字以上です
   </div>
   <br>
