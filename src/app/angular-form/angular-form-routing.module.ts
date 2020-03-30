@@ -12,7 +12,7 @@ import { ValidatorsComponent } from './validators/validators.component';
 
 const routes: Routes = [
   {
-    path: 'reactive-form', component: AngularFormComponent, children: [
+    path: 'angular-form', component: AngularFormComponent, children: [
       {path: 'value-changes', component: ValueChangesComponent},
       {path: 'set-value', component: SetValueComponent},
       {path: 'group-form', component: GroupFormComponent},
