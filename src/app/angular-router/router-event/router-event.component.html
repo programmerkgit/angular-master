@@ -1,9 +1,3 @@
 <ul>
-  <li><a routerLink="a">a</a></li>
-  <li><a routerLink="b">b</a></li>
+  <li *ngFor="let e of routerEvents">{{e || "a"}}</li>
 </ul>
-<div>{{a ? 'a is activated' : 'a is deactivated'}}</div>
-<div>{{b ? 'b is activated' : 'b is deactivated'}}</div>
-<router-outlet (activate)="activate($event); inspect(outlet)"
-               (deactivate)="deactivate($event)"
-               #outlet="outlet"></router-outlet>

@@ -1,55 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import { AComponent } from './a/a.component';
-import { BComponent } from './b/b.component';
-import { RouterOutlet } from '@angular/router';
-
-const links = [
-  'reactive-form',
-  'angular-router'
-];
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-router-event',
   templateUrl: './router-event.component.html',
   styleUrls: [ './router-event.component.scss' ]
 })
-export class RouterEventComponent implements OnInit {
+export class RouterEventComponent implements OnInit, OnDestroy {
 
+  routerEvents: any[] = [ 'ab' ];
+  subscriptions: Subscription[] = [];
 
-  a: boolean;
-  b: boolean;
-
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
   }
 
-  activate(component: any) {
-    if (component instanceof AComponent) {
-      this.a = true;
-    }
-    if (component instanceof BComponent) {
-      this.b = true;
-    }
-  }
-
-
-  deactivate(component: any) {
-    if (component instanceof AComponent) {
-      this.a = false;
-    }
-    if (component instanceof BComponent) {
-      this.b = false;
-    }
-  }
-
-  inspect(routerOutlet: RouterOutlet) {
-    console.log(routerOutlet.isActivated, 'isActivated');
-    console.log(routerOutlet.component, 'component');
-    console.log(routerOutlet.activatedRoute, 'activatedRoute');
-    console.log(routerOutlet.activatedRouteData, 'activatedRouteData');
+  ngOnDestroy(): void {
+    this.subscriptions.forEach(subscription => {
+      subscription.unsubscribe();
+    });
   }
 
   ngOnInit() {
-
+    this.subscriptions.push(this.router.events.subscribe(e => {
+      console.log(e);
+    }));
   }
 
 }

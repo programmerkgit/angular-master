@@ -10,6 +10,7 @@ export class ActivatedRouteComponent implements OnInit {
 
   queryParams: string;
   params: string;
+  keys: string[];
 
   constructor(
     private activatedRoute: ActivatedRoute
@@ -24,6 +25,9 @@ export class ActivatedRouteComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(params => {
       /* use queryParamMap */
       this.queryParams = JSON.stringify(params);
+    });
+    this.activatedRoute.queryParamMap.subscribe(params => {
+      this.keys = params.keys;
     });
   }
 

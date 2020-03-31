@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Link, Linkable } from '../linkable/link';
+import { Linkable } from '../linkable/link';
 
 @Component({
   selector: 'app-angular-router',
@@ -9,9 +9,10 @@ import { Link, Linkable } from '../linkable/link';
 export class AngularRouterComponent implements OnInit {
 
   links: Linkable[] = [
-    new Link('router-event'),
+    {url: 'router-property'},
     {url: 'url-tree'},
-    {url: 'activated-route', text: 'activated-route', queryParams: {query: '1'}}
+    {url: 'activated-route', text: 'activated-route', queryParams: {query: '1'}},
+    {url: 'router-event'}
   ];
 
   constructor() {
