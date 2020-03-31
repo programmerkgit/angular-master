@@ -9,7 +9,9 @@ import { Link, Linkable } from '../linkable/link';
 export class AngularRouterComponent implements OnInit {
 
   links: Linkable[] = [
-    new Link('router-event')
+    new Link('router-event'),
+    {url: 'url-tree'},
+    {url: 'activated-route', text: 'activated-route', queryParams: {query: '1'}}
   ];
 
   constructor() {

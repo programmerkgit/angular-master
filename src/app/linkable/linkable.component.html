@@ -1,7 +1,8 @@
 <ul>
   <li *ngFor="let linkable of linkables">
     <ng-container *ngIf="linkable.url else dir">
-      <a [routerLink]="linkable.url">{{linkable.text ? linkable.text : linkable.url}}</a>
+      <a [routerLink]="linkable.url"
+         [queryParams]="linkable.queryParams">{{linkable.text ? linkable.text : linkable.url}}</a>
     </ng-container>
     <ng-template #dir>
       <div>{{linkable.text}}</div>

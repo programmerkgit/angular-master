@@ -3,6 +3,7 @@ export type Linkable = Link | Directory;
 export class Link {
   url: string;
   text?: string;
+  queryParams?: { [ P: string ]: string };
 
   constructor(url: string, text?: string) {
     this.url = url;
