@@ -4,6 +4,7 @@ import { AngularRouterComponent } from './angular-router.component';
 import { UrlTreeComponent } from './url-tree/url-tree.component';
 import { ActivatedRouteComponent } from './activated-route/activated-route.component';
 import { RouterEventComponent } from './router-event/router-event.component';
+import { RouterLinkComponent } from './router-link/router-link.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
       },
       {path: 'url-tree', component: UrlTreeComponent},
       {path: 'activated-route', component: ActivatedRouteComponent},
-      {path: 'router-event', component: RouterEventComponent}
+      {path: 'router-event', component: RouterEventComponent},
+      {path: 'router-link', component: RouterLinkComponent},
     ]
   },
 ];

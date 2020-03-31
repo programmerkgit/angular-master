@@ -9,7 +9,6 @@ import { Subscription } from 'rxjs';
 })
 export class RouterEventComponent implements OnInit, OnDestroy {
 
-  routerEvents: any[] = [ 'ab' ];
   subscriptions: Subscription[] = [];
 
   constructor(
@@ -24,6 +23,7 @@ export class RouterEventComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    /* subscribe when navigate to another route */
     this.subscriptions.push(this.router.events.subscribe(e => {
       console.log(e);
     }));

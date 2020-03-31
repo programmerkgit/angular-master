@@ -1,6 +1,8 @@
 <ul>
   <li *ngFor="let linkable of linkables">
     <ng-container *ngIf="linkable.url else dir">
+      <!--router.data cannot be used. use queryParams  -->
+      <!--<a [routerLink]=["path", {data: "data"}]>  -->
       <a [routerLink]="linkable.url"
          [queryParams]="linkable.queryParams">{{linkable.text ? linkable.text : linkable.url}}</a>
     </ng-container>

@@ -1,4 +1,8 @@
 <aside>
   <app-linkable [linkables]="links"></app-linkable>
+  <ul>
+    <h3>pass params by routerLink</h3>
+    <li><a [routerLink]="['router-link', {data: 'data', key2: 'data'}]">router-link</a></li>
+  </ul>
 </aside>
 <router-outlet></router-outlet>

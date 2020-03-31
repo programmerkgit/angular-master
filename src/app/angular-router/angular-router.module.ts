@@ -7,10 +7,11 @@ import { LinkableModule } from '../linkable/linkable.module';
 import { UrlTreeComponent } from './url-tree/url-tree.component';
 import { ActivatedRouteComponent } from './activated-route/activated-route.component';
 import { RouterEventComponent } from './router-event/router-event.component';
+import { RouterLinkComponent } from './router-link/router-link.component';
 
 
 @NgModule({
-  declarations: [ AngularRouterComponent, UrlTreeComponent, ActivatedRouteComponent, RouterEventComponent ],
+  declarations: [ AngularRouterComponent, UrlTreeComponent, ActivatedRouteComponent, RouterEventComponent, RouterLinkComponent ],
   imports: [
     CommonModule,
     AngularRouterRoutingModule,
